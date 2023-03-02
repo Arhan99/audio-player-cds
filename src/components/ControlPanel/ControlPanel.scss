@@ -1,0 +1,29 @@
+.control-panel {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__timer {
+    font-size: 12px;
+    font-weight: 200;
+    color: #fffafa;
+  }
+  &__center {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.arrow {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  &__left {
+    transform: rotate(-135deg);
+  }
+  &__right {
+    transform: rotate(45deg);
+  }
+}

@@ -1,0 +1,69 @@
+$progress-bar-height: 4px;
+$thumb-width: 20px;
+$thumb-height: 20px;
+
+.slider {
+  position: relative;
+  width: 100%;
+  &::before {
+    content: "";
+    background-color: white;
+    width: 99%;
+    height: $progress-bar-height;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  // Custom progress bar
+  &__progress-bar-cover {
+    background-color: rgb(225, 144, 23);
+    width: 100%;
+    height: $progress-bar-height;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  // Thumb
+  &__thumb {
+    width: $thumb-width;
+    height: $thumb-height;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    z-index: 3;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    pointer-events: none;
+    user-select: none;
+  }
+  // Original range
+  &__range {
+    -webkit-appearance: none;
+    background-color: rgba(8, 80, 214, 0.6);
+    height: 10px;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+    margin: 0 auto;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: $thumb-width;
+      height: $thumb-height;
+      background: #ee06bc;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
