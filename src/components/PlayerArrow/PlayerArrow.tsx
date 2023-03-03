@@ -11,7 +11,9 @@ const PlayerArrow: FC<ArrowProps> = ({ changeMusic, objectsStore, right }) => {
   return (
     <div
       className={`arrow ${right ? "arrow-right" : ""}`}
-      onClick={() => changeMusic(objectsStore.currentMusicIndex - 1)}
+      onClick={() =>
+        changeMusic(objectsStore.currentMusicIndex + (right ? 1 : -1))
+      }
     >
       <svg
         width="40"
