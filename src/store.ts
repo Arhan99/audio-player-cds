@@ -45,7 +45,7 @@ class ObjectStore {
       new MusicObject(3, "Jon Bellion - All Time Low", image3, music3, false),
       new MusicObject(
         4,
-        "Twenty one pilots - Stressed Out",
+        "Twenty one pilots: Stressed Out",
         image4,
         music4,
         false

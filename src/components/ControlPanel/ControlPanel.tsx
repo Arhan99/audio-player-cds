@@ -3,8 +3,7 @@ import PanelButton from "../PanelButton/PanelButton";
 import "./ControlPanel.scss";
 import { secondsToHms } from "../../utils/secondsToHms";
 import { objectsStore } from "../../Modules/Playlist/Playlist";
-import PrevArrow from "../Arrows/PrevArrow";
-import NextArrow from "../Arrows/NextArrow";
+import PlayerArrow from "../PlayerArrow/PlayerArrow";
 
 type ControlPanelProps = {
   play: () => void;
@@ -23,13 +22,17 @@ const ControlPanel: FC<ControlPanelProps> = ({
 }) => {
   return (
     <div className="control-panel">
-      <div className="control-panel__timer">{secondsToHms(currentTime)}</div>
+      <span className="control-panel__timer">{secondsToHms(currentTime)}</span>
       <div className="control-panel__center">
-        <PrevArrow changeMusic={changeMusic} objectsStore={objectsStore} />
+        <PlayerArrow changeMusic={changeMusic} objectsStore={objectsStore} />
         <PanelButton play={play} isPlaying={isPlaying} />
-        <NextArrow changeMusic={changeMusic} objectsStore={objectsStore} />
+        <PlayerArrow
+          changeMusic={changeMusic}
+          objectsStore={objectsStore}
+          right
+        />
       </div>
-      <div className="control-panel__timer">{secondsToHms(duration)}</div>
+      <span className="control-panel__timer">{secondsToHms(duration)}</span>
     </div>
   );
 };
